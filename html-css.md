@@ -59,7 +59,9 @@
 
 # HTML- body
 
-##  VSC단축키(shortcut)         nav>ul>li*4>a
+##  VSC단축키(shortcut) 빠르게 마크업하기        
+
+**nav>ul>li*4>a**
 
 ```html
  <nav>
@@ -89,7 +91,17 @@ div.number*10>{#$} 을 입력 하면 이렇게된다
     <div class="number">#10</div>
 ```
 
+- **p{hello}**         -텍스트넣기
 
+```html
+<p>hello</p>
+```
+
+- **p>lorem3**     -더미용 텍스트의 단어 갯수 설정 가능
+
+```html
+<p>Lorem, ipsum dolor.</p>
+```
 
 ## h 태그
 
@@ -101,7 +113,7 @@ div.number*10>{#$} 을 입력 하면 이렇게된다
 
 ## list 태그 
 
-unordered list 
+**unordered list** 
 
 ```html
 <ul>
@@ -124,6 +136,10 @@ unordered list
 ```html
 <li>beer</li> 
 ```
+
+**dl태그**
+
+정의나 설명목록이다( dl>dt>dd)
 
 ## a태그
 
@@ -218,7 +234,7 @@ id 는 고유값이어야한다 단 하나의 아이디만 가질수있다 (**id
 
 | 태그         | 설명                                                         |
 | :----------- | :----------------------------------------------------------- |
-| <article>    | 내용을 정의한다.                                             |
+| <article>    | 내용을 정의한다. 반복되고 재사용 가능한 것을 묶어 준것       |
 | <aside>      | 페이지 콘텐츠를 제외한 콘텐츠를 정의한다. 링크, 광고, 사이드바 표시 등. |
 | <details>    | 사용자가 보거나 숨길 수있는 추가 세부 정보를 정의한다.       |
 | <figcaption> | <figure> 요소에 대한 캡션을 정의한다.                        |
@@ -249,6 +265,8 @@ id 는 고유값이어야한다 단 하나의 아이디만 가질수있다 (**id
 ```html
  <span>123 Road Altavista</span>
 ```
+
+![image-20220426135025562](./readme_img/image-20220426135025562.png)
 
 ## nav
 
@@ -335,8 +353,8 @@ inline은 옆에 다른요소가 올수있다,같은줄에 위치할수있음 (s
 inline은 높이와 너비가 없다(내용이 있어야 모양이보임) - block는 높이와 너비가 있다
 ```
 
-- disply:block 는 box 속성을 가짐, 그래서 옆에 아무도 올수 없고 세로로 나열함   ex) div
-- disply:inline-block는 box 속성을 가짐, 그래서 block속성을 유지할수있게 해주고 가로로 나열함  (withd,height 적용 가능)
+- disply: block 는 box 속성을 가짐, 그래서 옆에 아무도 올수 없고 세로로 나열함   ex) div
+- disply: inline-block는 box 속성을 가짐, 그래서 block속성을 유지할수있게 해주고 가로로 나열함  (withd,height 적용 가능)
 - **inline-block** 와 **inline** 차이점: inline은 box가 아니다 그래서 너비와 높이가 적용이 안된다(두요소는 children에게적용해야함)
 
 **block/line속성 바꾸기** (div가 inline 속성이됨)
@@ -365,9 +383,10 @@ inline은 높이와 너비가 없다(내용이 있어야 모양이보임) - bloc
 ```
 
 ```html
-margin:0px; 4면다적용됨
-margin:20px 15px;(상하 좌우)  
-margin:20px 15px 50px 30px; 시계방향순서(위-오-아래-왼)
+margin:0px;                   4면다적용됨
+margin:20px 15px;             (상하 좌우)  
+margin:20px 15px 50px 30px;   시계방향순서(위-오-아래-왼)
+margin: auto;                 수평으로 자동으로 마진줌으로 정렬해줌(수직은 작동안됨)
 ```
 
 → body와 div 경계가 같다면  위아래margin은 똑같이 움직임 (collapsing margins현상)
@@ -793,6 +812,14 @@ white-space: nowrap;
 
   기본 값은 flex-grow:0 이다
 
+  ```css
+    .project {
+      flex-grow: 1;
+    }
+  ```
+
+  - 여백신경안쓰고 화면을 1비율로 꽉채워줌
+
 - **flex-shrink**
 
   **자식**에게만 줄수있는 명령어다 
@@ -861,7 +888,7 @@ position:fixed;  위치를 고정시켜줌
   </body>
 ```
 
-→ top,right,left,bottom을 이용해서 요소의 처음 놓인 자리에서 상하좌우로 움직임
+→ top,right,left,bottom을 이용해서 요소의 처음 놓인 자리에서 상하좌우로 움직임 (자기자리에서 옮겨간다)
 
 ## position: absolute
 
@@ -893,7 +920,7 @@ position:fixed;  위치를 고정시켜줌
   </body>
 ```
 
-→ body가 기준이(부모가기준이됨) 되어 움직임 
+→ body가 기준이(부모가기준이됨) 되어 움직임  (상위 태그안에서 옮겨간다)
 
 → 기준이되었으면 하는 곳에 position: relative; 을 입력해주면 그곳이 기준이되고 부모가됨
 
@@ -1108,6 +1135,15 @@ not  (뭔가가 적용되는 걸 원하지 않을때)
       }
 ```
 
+```css
+.major__icon:hover i {
+  color: var(--color-pink);
+  transform: rotate(-30deg) scale(1.1);
+}
+```
+
+- major__icon에 호버를 하면 i에게만 스타일을 적용한다
+
 ## **focus** 태그(States 태그)
 
 **focus** (키보드로 선택하면 색이 바뀜)
@@ -1248,7 +1284,7 @@ Color
 
 → #fff:흰색, #000:블랙  rgb(252, 206, 0, 0.8)에서 0.8은 투명도이다.
 
-## root
+## :root  변수선언
 
 ```css
   :root {
@@ -1265,6 +1301,22 @@ Color
 ```
 
 `:root {--이름지정-이름: 값  ;}`
+
+## 데이터 속성
+
+**데이터 속성**  [`data-*`속성](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)
+
+```css
+<article
+  id="electric-cars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">
+...
+</article>
+```
+
+
 
 ##  transition
 
@@ -1309,9 +1361,14 @@ transitions (어떤 상태에서 다른 상태로 가는 변화)
 
 ## transform
 
-```html
-transform: rotateY(35deg);
-transform: translateX(-60px);
+```css
+transform: translateX(100px);   //X축으로 이동
+transform: translate(50px, -20px);  //X,Y축으로 이동
+transform: scale(1.2);  //1.2배 커진다
+transform: rotate(45deg) // 45도로 돌아감
+transform: translateX(100px) scale(1.2)  rotate(45deg) //같이 써도됨
+
+x는 오르쪽으로 갈수록 값이 커진다, y는 밑으로 갈수록 값이 커진다.
 ```
 
 ```html
@@ -1332,6 +1389,26 @@ transform: translateX(-60px);
 ```
 
 > https://developer.mozilla.org/ko/docs/Web/CSS/transform 이사이트에서 복붙가능
+
+### - 가운데 정렬하기
+
+```
+.box{
+position: absolute;
+width: 200px;
+height: 200px;
+background-color: red;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+```
+
+box사이즈가 딱 화면의 절반이 아닐때 가운데로 맞추기위해서는 
+
+`position: absolute` 으로 화면가운데로 맞추고 box의 가운데가 화면의 가운데로 
+
+일치하기 위해서는 `transform: translate(-50%,-50%)` 을 사용해서 맞춰줘야한다.
 
 ## keyframes  from to  
 
@@ -1547,6 +1624,17 @@ text-align: justify;
 }
 ```
 
+### - 가운데 정렬
+
+```css
+h1{
+text-align: center; //수평만 적용됨
+line-height: 100px //글자의 높이를 부모의 높이만큼 주면됨 (한줄일때 사용하는 해키한 방법)
+}
+```
+
+- text-align은 수평만 정렬이 적용되기때문에 텍스트의 높이line-height를 박스만큼 값을 주면 알아서 가운데로 간다.
+
 ## text-align (문장 정렬)
 
 ```scss
@@ -1555,7 +1643,9 @@ text-align: justify;
   }
 ```
 
-→ 문장의 기준을 설정할수있다
+→ 문장의 기준을 설정할수있다 (수직은안됨)
+
+→ 텍스트 뿐만 아니라 버튼과 같은 인라인요소들을 정렬할때 쓸 수 있음
 
 ##  linear-gradient (그라데이션)
 
@@ -1588,9 +1678,10 @@ text-align: justify;
 ## background-image
 
 ``` scss
-background-image: url("");
-background-size: cover;
-background-position: center;
+background-image: url('');  //url을 이용해서 사진넣기
+background-repeat: no-repeat;  //사진반복안함
+background-position: center;  //사진의 센터가 보이도록 하기
+bacckground-size: cover;  //지정한 넓이만큼 사진이 꽉차게 하기
 ```
 
 background-image를 이용해서 배경이미지를 가져온다
@@ -2241,6 +2332,14 @@ h1{
 
 - Prettier(내용 바르게 수정해줌)설치-왼쪽하단에 톱니바퀴클릭-세팅클릭-editor검색-Format On Save 찾아서 박스체크하기
 
+- **BEM**
+
+  - 클래스 이름을 작성하는 방법에 댈란 규칙
+
+  - 작성방법: block__element--modifier
+
+  - 예시: card  /  card`__`img  /  card`__`title   /  card`__`title`--`blue  /  card`__`title`--`black
+
 -------------------------------------------------------------------------------------------------------------------------
 
 - 무료아이콘
@@ -2276,6 +2375,28 @@ h1{
 - 그리드 설명 페이지 : https://blogpack.tistory.com/844
 - 랜덤이미지 url: https://source.unsplash.com/random
 - 더미텍스트 한글입숨 : https://hangul.thefron.me/
+
+# 비쥬얼 스튜디오 익스텐션
+
+Material Theme: 환경색 조절
+
+Material Theme Icons:, 아이콘
+
+Prettier - Code formatter : 자동으로 세팅해줌(ctrl, (설정)->setting검색->save검색->fomat on save체크)
+
+[Deprecated] Bracket Pair Colorizer 2:괄호마다 색을 다르게 지정할수있어 가독성을 높임
+
+indent-rainbow: 들여쓰기된 부분의 가독성을 높여줌
+
+Auto Rename Tag:html 태그를 편집할때 앞뒤로 둘다 변경해줌
+
+CSS Peek: 정의된 css 파일로 넘어가짐 (ctrl+css로 정의된 클래스나 아이디 클릭)
+
+HTML CSS Support: css 정의된것을 보여주어 html에서 css 명을 바꾸기 편리함
+
+HTML to CSS autocompletion: html에서 정의한 css를 css에서 자동완성으로 찾아줌
+
+Live Server: 작성중인 코드를 윈도우 창에 자동으로 업데이트 해줌
 
 # git
 
